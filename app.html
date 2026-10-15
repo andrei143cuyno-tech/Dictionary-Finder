@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Look up English words with Dictionary Finder.">
+  <title>Dictionary Finder | Word Search</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="app-page">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Back to portfolio">
+      <span class="brand-mark">D</span>
+      <span>Dictionary Finder</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="index.html">← Portfolio Home</a>
+      <a class="nav-cta" href="#search">Search a word</a>
+    </nav>
+  </header>
+
+  <main class="dictionary-main">
+    <section class="dictionary-intro">
+      <p class="eyebrow">YOUR PERSONAL WORD EXPLORER</p>
+      <h1>What word are you <span>curious about?</span></h1>
+      <p>Find definitions, pronunciation, parts of speech, and examples when the API provides them.</p>
+    </section>
+
+    <section class="search-panel" id="search" aria-labelledby="search-title">
+      <h2 id="search-title">Look up a word</h2>
+      <form id="search-form" class="search-form">
+        <label class="sr-only" for="word-input">English word</label>
+        <div class="search-input-wrap">
+          <span aria-hidden="true">⌕</span>
+          <input id="word-input" name="word" type="text" placeholder="Try “curiosity” or “resilient”" autocomplete="off" required maxlength="60">
+          <button class="button button-primary" type="submit">Search <span aria-hidden="true">→</span></button>
+        </div>
+        <p class="input-hint">Enter one English word. Internet access is required.</p>
+      </form>
+      <div class="quick-search">
+        <span>Try:</span>
+        <button class="word-chip" type="button" data-word="serendipity">serendipity</button>
+        <button class="word-chip" type="button" data-word="resilient">resilient</button>
+        <button class="word-chip" type="button" data-word="eloquent">eloquent</button>
+      </div>
+    </section>
+
+    <section id="message-area" class="message-area" aria-live="polite" role="status">
+      <div class="empty-state">
+        <div class="empty-icon">Aa</div>
+        <h2>Your word journey starts here.</h2>
+        <p>Search for a word to see its dictionary entry.</p>
+      </div>
+    </section>
+
+    <section class="recent-section" aria-labelledby="recent-title">
+      <div class="recent-heading">
+        <div>
+          <p class="eyebrow">YOUR SESSION</p>
+          <h2 id="recent-title">Recent searches</h2>
+        </div>
+        <button id="clear-history" class="text-button" type="button">Clear history</button>
+      </div>
+      <div id="history-list" class="history-list">
+        <p class="muted-text">Words you search for will appear here.</p>
+      </div>
+    </section>
+
+    <section class="api-note">
+      <span class="api-note-icon">i</span>
+      <p><strong>About the data:</strong> Definitions are retrieved from the Free Dictionary API. Entries can differ in the details they provide, so pronunciation, examples, and audio are shown only when available.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Dictionary Finder · JavaScript API Project</span>
+    <a href="https://freedictionaryapi.com/api/v1" target="_blank" rel="noopener noreferrer">Free Dictionary API documentation ↗</a>
+  </footer>
+</body>
+</html>
